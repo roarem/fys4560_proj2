@@ -1,0 +1,185 @@
+\documentclass{article}
+
+\usepackage {amsmath}
+\usepackage {slashed}
+
+\begin {document}
+\section{Di-lepton production in $e^+e^-$ in the SM}
+
+Using the Feynman rules for scalar QED we get an amplitude 
+%
+\begin{equation}
+  i\mathcal{M} =%
+		\bar{v}^{s'}(p')(-ie\gamma^{\mu})u^s(p)%
+		\left(\frac{-ig_{\mu\nu}}{q^2}\right)%
+		\bar{u}^r(k)(-ie\gamma^{\nu})v^{r'}(k')
+\end{equation}
+%
+Where $p$ and $p'$ are the momentum for the incoming $e^+e^-$,%
+and $k$ and $k'$ are the momentums of the outgoing $\tau^+\tau^-$.
+$s$ and $r$ are the spin indicies, $q$ is the momentum of the force 
+mediator and $e$ is the elementary charge.
+On a more compact form leaving the spin superscripts implicit
+%
+\begin{equation}
+  i\mathcal{M} =%
+		\frac{ie^2}{q^2}\left(\bar{v}(p')\gamma^{\mu}u(p)\right)%
+		\left(\bar{u}(k)\gamma_{\mu}v(k')\right)
+\end{equation}
+%
+Then using $(\bar{v}\gamma^{\mu}u)^* = \bar{u}\gamma^{\mu}v$ 
+to get the $|\mathcal{M}|^2$ leads to
+%
+\begin{equation}
+|\mathcal{M}|^2 = \frac{e^4}{q^4}%
+		  \Big(\bar{v}(p')\gamma^{\mu}u(p)\bar{u}(p)\gamma^{\nu}v(p')\Big)%
+		  \Big(\bar{u}(k)\gamma_{\mu}v(k')\bar{v}(k')\gamma_{\nu}u(k)\Big)
+\label{sqM}
+\end{equation}
+%
+Now taking the spins into account we have an expression on the form
+%
+\begin{equation}
+  \frac{1}{4}\sum_s\sum_{s'}\sum_r\sum_{r'}|\mathcal{M}(s,s'\rightarrow r,r')|^2.
+\end{equation}
+%
+With the 2 completeness relations
+%
+\begin{equation}
+  \sum_s u^s(p)\bar{u}^s(p) = \slashed{p} + m\,;\quad\quad%
+  \sum_s v^s(p)\bar{v}^s(p) = \slashed{p} - m
+  \label{comprel}
+\end{equation}
+%
+used in the the first parenthesis in equation (\ref{sqM}) written out in spinor indicies,
+making it possible to move $v$ and $\bar{v}$ next to each other we get
+\begin{flalign*}
+  \sum_{s,s'} \bar{v}^{s'}_{a}(p')\gamma^{\mu}_{ab}u^s_b(p)%
+  \bar{u}^s_c(p)\gamma^{\nu}_{cd}v^{s'}_d(p') &=%
+  (\slashed{p}'-m)_{da}\gamma^{\mu}_{ab}(\slashed{p} + m)_{bc}\gamma^{\nu}_{cd}\\
+  &= \text{tr}[(\slashed{p}' -m)\gamma^{\mu}(\slashed{p}+m)\gamma^{\nu}]
+\end{flalign*}
+thus our squared matrix element becomes the product of 2 traces
+%
+\begin{equation}
+  \frac{1}{4}\sum_{\text{spins}}|\mathcal{M}|^2 = %
+  \frac{e^4}{4q^4}%
+  \text{tr}\left[(\slashed{p}' - m_e)\gamma^{\mu}(\slashed{p} + m_e)\gamma^{\nu}\right]%
+  \text{tr}\left[(\slashed{k} + m_{\tau})\gamma_{\mu}(\slashed{k}' - m_{\tau})\gamma_{\nu}\right]%
+\end{equation}
+%
+Insert trace technology here
+%
+Using the trace relations we get for the $e$ part
+%
+\begin{equation}
+  \text{tr}\left[(\slashed{p}' - m_e)\gamma^{\mu}(\slashed{p} + m_e)\gamma^{\nu}\right] =%
+  4\left[p^{'\mu}p^{\nu} + p^{'\nu}p^{\mu} - g^{\mu\nu}(p\cdot p' + m_e^2)\right]
+\end{equation}
+and for the $\tau$
+\begin{equation}
+  \text{tr}\left[(\slashed{k} + m_{\tau})\gamma_{\mu}(\slashed{k}' + m_{\tau})\gamma_{\nu}\right] =%
+  4\left[k_{\mu}k'_{\nu} + k_{\nu}k'_{\mu} - g_{\mu\nu}(k\cdot k' + m_{\tau}^2)\right]
+\end{equation}
+%
+There is a large difference in $m_e << m_{\tau}$ which makes it reasonable to set $m_e = 0$,
+multiplying the traces gives us a square matrix element of
+%
+\begin{equation}
+  \frac{1}{4}\sum_{\text{spins}}|\mathcal{M}|^2 =%
+  \frac{8e^4}{q^4}%
+  \left[(p\cdot k)(p'\cdot k') + (p\cdot k')(p'\cdot k) + m^2_{\tau}(p\cdot p')\right]
+  \label{genEq}
+\end{equation}
+%
+Furterhmore we choose the center of mass reference frame and translates our momentums into
+kinematic variables instead, energies and angles.
+%
+\begin{equation}
+\begin{array}{ccc}
+  q^2 = (p+p')^2 = 4E^2 &\,;\quad& p\cdot p' = 2E^2\\
+  p\cdot k = E^2 - E|\textbf{k}|\cos\theta &\,;\quad& p\cdot k' = E^2 + E|\textbf{k}|\cos\theta
+\end{array}
+\end{equation}
+%
+Rewriting eq. (\ref{genEq}) in terms of $E$ and $\theta$ we get
+%
+\begin{flalign}
+  \frac{1}{4}\sum_{\text{spins}}|\mathcal{M}|^2 &=%
+  \frac{8e^4}{16E^4}%
+  \Big[ %
+    E^2(E-|\textbf{k}|\cos\theta)^2 +%
+    E^2(E+|\textbf{k}|\cos\theta)^2 +%
+    2m_{\tau}^2E^2]
+  \Big]\\
+  %
+  &= e^4%
+  \left[ %
+    \left(1+\frac{m^2_{\tau}}{E^2}\right) +%
+    \left(1 - \frac{m^2_{\tau}}{E^2}\right)\cos^2\theta%
+  \right]
+\end{flalign}
+%
+Now that we have $|\mathcal{M}|^2$  we can put it into a formula for $d\sigma/d\cos\theta$ 
+derived in Peskin\footnote{Page 107, Equation 4.84}
+%
+\begin{equation}
+  \left(\frac{d\sigma}{d\Omega}\right)_{CM} =%
+  \frac{1}{2E_A 2E_B |v_p - v_{p'}|}\frac{|\mathbf{k}|}{(2\pi)^24E_{CM}}|\mathcal{M}|^2
+\end{equation}
+%
+In the center of mass frame the relative speed $|v_{p}- v_{p'}|$ becomes 2, and $E_p=E_{p'}=E_{CM}/2 = \sqrt{s}/2$. 
+With a symmetry about the longitudinal direction we can make the differential cross section
+\begin{equation}
+  \frac{d\sigma}{d\cos\theta} = %
+  \frac{\mathbf{|k|}}{32\pi^2 s^{3/2}} |\mathcal{M}|^2 =%
+  \frac{1}{32\pi^2s}\sqrt{1-4\frac{m_{\tau}^2}{s}}|\mathcal{M}|^2
+\end{equation}
+%
+Integrating with respect to $\cos\theta$ we aquire the total cross section. Keeping the prefactors
+out of the calculation since they are not dependent on $cos\theta$ and integrate our expression
+for the squared matrix element.
+%
+\begin{flalign*}
+  \int^1_{-1}d\cos\theta e^4|\mathcal{M}|^2 &=%
+  e^4\left[\left(1+4\frac{m_{\tau}^2}{s}\right)\cos\theta+%
+  \frac{1}{3}\left(1-4\frac{m_{\tau}^2}{s}\right)\cos^3\theta\right]^{1}_{-1}\\
+  &= \frac{8}{3}\left(1 + 2\frac{m^2_{\tau}}{s}\right)
+\end{flalign*}
+Combining combining this with our differential cross section we get an expression for the
+total cross section
+\begin{flalign*}
+  \sigma &=  \frac{4}{3}\frac{e^4}{32\pi^2s}%
+  \sqrt{1-4\frac{m^2_{\tau}}{s}}\left(1+2\frac{m^2_{\tau}}{s}\right)\\
+  &= \frac{2}{3}\frac{\alpha^2}{s}%
+  \sqrt{1-4\frac{m^2_{\tau}}{s}}\left(1+2\frac{m^2_{\tau}}{s}\right)
+\end{flalign*}
+with $\alpha = e^2/(4\pi)$.
+\end {document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
