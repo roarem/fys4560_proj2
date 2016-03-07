@@ -6,6 +6,7 @@
 \begin {document}
 \section{Di-lepton production in $e^+e^-$ in the SM}
 
+\subsection{QED}
 Using the Feynman rules for scalar QED we get an amplitude 
 %
 \begin{equation}
@@ -155,6 +156,92 @@ total cross section
   \sqrt{1-4\frac{m^2_{\tau}}{s}}\left(1+2\frac{m^2_{\tau}}{s}\right)
 \end{flalign*}
 with $\alpha = e^2/(4\pi)$.
+
+\subsection{Electroweak}
+This unifcation requires both the $\mathcal{M}_{QED}$ and $\mathcal{M}_{WI}$ 
+matrix elements. Using the feynman-rules from the weak model our $\mathcal{M}_{WI}$ 
+will take the form
+%
+\begin{equation}
+  \mathcal{M}_{WI} = -\frac{g^2_Z}{s - m^2_Z + im_z\Gamma_Z}g_{\mu\nu}%
+  \left[\bar{v}(p')\gamma^{\mu}\frac{1}{2}(c^e_V - c^e_A\gamma^5)u(p)\right]%
+  \left[\bar{u}(k)\gamma^{\mu}\frac{1}{2}(c^{\tau}_V - c^{\tau}_A\gamma^5)v(k')\right]
+\end{equation}
+%
+where $1/(s - m^2_Z + im_Z\Gamma_Z) = P_Z(s)$ is the Z propogator, $c^{e/\tau}_{V/A}$
+are the vector and axial-vector couplings of the Z to our leptons.
+It will be handy to rewrite those couplings to left- and right-handed
+chiral states as $c_V = c_L + c_R$ and $c_A = c_L - c_R$
+%
+\begin{equation}
+  -P_Zg_Z^2g_{\mu\nu}%
+  \left[%
+    c_L^e \bar{v}(p') \gamma^{\mu} P_L u(p) +%
+    c_R^e \bar{v}(p') \gamma^{\mu} P_R u(p) %
+  \right]%
+  \left[%
+    c_L^{\tau} \bar{u}(k) \gamma^{\nu} P_L v(k') +%
+    c_R^{\tau} \bar{u}(k) \gamma^{\nu} P_R v(k') %
+  \right]
+\end{equation}
+%
+where $P_L$ and $P_R$ are the chiral projection operators $\frac{1}{2}(1\mp \gamma^5)$.
+Using these chiral projection operators on a particle state give the result
+\[ P_Lu=u_{\downarrow},\, P_Ru = u_{\uparrow},\, P_Lv = v_{\uparrow},\, P_Rv=v_{\downarrow} \]
+And with helicity combinations like $\bar{u}_{\uparrow}\gamma^{\mu}v_{\uparrow}$ giving zero
+matrix elements we are left with four helicity combinations
+%
+\begin{flalign}
+  \mathcal{M}_{RR} &=-P_Z g^2_Z c^{e}_{R}c^{\tau}_{R} g^{\mu\nu}%
+  \left[ \bar{v}_{\downarrow}(p')\gamma^{\mu}u_{\uparrow}(p)\right]%
+  \left[ \bar{u}_{\uparrow}(k)\gamma^{\nu}v_{\downarrow}(k')\right]\\
+  \mathcal{M}_{RL} &=-P_Z g^2_Z c^{e}_{R}c^{\tau}_{L} g^{\mu\nu}% 
+  \left[ \bar{v}_{\downarrow}(p')\gamma^{\mu}u_{\uparrow}(p)\right]%
+  \left[ \bar{u}_{\downarrow}(k)\gamma^{\nu}v_{\uparrow}(k')\right]\\
+  \mathcal{M}_{LR} &=-P_Z g^2_Z c^{e}_{L}c^{\tau}_{R} g^{\mu\nu}% 
+  \left[ \bar{v}_{\uparrow}(p')\gamma^{\mu}u_{\downarrow}(p)\right]%
+  \left[ \bar{u}_{\uparrow}(k)\gamma^{\nu}v_{\downarrow}(k')\right]\\
+  \mathcal{M}_{LL} &=-P_Z g^2_Z c^{e}_{L}c^{\tau}_{L} g^{\mu\nu}% 
+  \left[ \bar{v}_{\uparrow}(p')\gamma^{\mu}u_{\downarrow}(p)\right]%
+  \left[ \bar{u}_{\uparrow}(k)\gamma^{\nu}v_{\uparrow}(k')\right]
+\end{flalign}
+%
+The combinations of these four-vector currents can be shown to come to a simpler form
+as with this example
+%
+\[
+  g_{\mu\nu} [\bar{v}_{\downarrow}(p')\gamma^{\mu}u_{\uparrow}(p)]%
+  [\bar{u}_{\uparrow}(k)\gamma^{\nu}v_{\downarrow}(k')] = s(1+\cos\theta)
+\]
+%
+using this on each helicity state we get
+%
+\begin{flalign}
+  |\mathcal{M}_{RR}|^2 &=|P_Z|^2 g^4_Z (c^{e}_{R})^2(c^{\tau}_{R})^2 s^2(1+\cos\theta)^2\\
+  |\mathcal{M}_{RL}|^2 &=|P_Z|^2 g^4_Z (c^{e}_{R})^2(c^{\tau}_{L})^2 s^2(1-\cos\theta)^2\\
+  |\mathcal{M}_{LR}|^2 &=|P_Z|^2 g^4_Z (c^{e}_{L})^2(c^{\tau}_{R})^2 s^2(1-\cos\theta)^2\\ 
+  |\mathcal{M}_{LL}|^2 &=|P_Z|^2 g^4_Z (c^{e}_{L})^2(c^{\tau}_{L})^2 s^2(1+\cos\theta)^2 
+\end{flalign}
+%
+The spin average of the full matrix elemnt $|\mathcal{M}|^2$ is then the sum of each helicity 
+state squared
+%
+\[ 
+  <|\mathcal{M}|^2> = \frac{1}{4} \left( |\mathcal{M}_{RR}|^2 + |\mathcal{M}_{LL}|^2 +%
+  |\mathcal{M}_{RL}|^2 + |\mathcal{M}_{LR}|^2\right)
+\]
+%
+writing the terms out gives us
+%
+\begin{flalign*}
+  <|\mathcal{M}|^2> = %
+  \frac{1}{4}|P_Z|^2 g_Z^4 s^2%
+  \Big(%
+  &\left[ (c^e_R)^2(c^{\tau}_R)^2 + (c^e_L)^2(c^{\tau}_L)^2 \right](1+\cos\theta)^2 \\+%
+  &\left[ (c^e_R)^2(c^{\tau}_L)^2 + (c^e_L)^2(c^{\tau}_R)^2 \right](1-\cos\theta)^2% 
+  \Big)
+\end{flalign*}
+
 \end {document}
 
 
