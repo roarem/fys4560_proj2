@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{feynmp-auto}
+\usepackage[margin=1cm]{geometry}
+\begin{document}
+\pagenumbering{gobble}
+\unitlength = 1cm
+\begin{figure*}[h]
+\begin{fmffile}{eeqqgg}
+  \begin{fmfgraph*}(10,4)
+
+    \fmfleft{e1,e2}
+    \fmfright{l1,l2}
+
+    \fmf{fermion}{e1,ipz}
+    \fmf{fermion}{ipz,e2}
+
+    \fmf{dashes,label=$H$}{ipz,opz}
+
+    \fmf{fermion}{opz,l1}
+    \fmf{fermion}{l2,opz}
+
+    \fmflabel{$e^-$}{e1}
+    \fmflabel{$e^+$}{e2}
+    \fmflabel{$\tilde{l}^-$}{l1}
+    \fmflabel{$\tilde{l}^+$}{l2}
+
+  \end{fmfgraph*}
+\end{fmffile}
+\end{figure*}
+\end{document}

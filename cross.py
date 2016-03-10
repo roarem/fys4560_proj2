@@ -9,9 +9,12 @@ def crossSection(sqrtS):
 
 sqrtS = np.linspace(1.78*1.78*4,150,100)
 
-cross = crossSection(sqrtS)
+cross = crossSection(sqrtS)*0.3894*1e-3
 
 fig, ax = plt.subplots()
 ax.plot(sqrtS, cross)
-plt.show()
-
+ax.set_ylabel(r"$\sigma [b]$")
+ax.set_xlabel(r"s [$GeV$]")
+ax.ticklabel_format(style='sci', axis='y')
+ax.yaxis.major.formatter.set_powerlimits((0,0)) 
+plt.savefig('QEDcross.pdf')

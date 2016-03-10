@@ -1,14 +1,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-inFile = open("Zp_Asymmetry.txt",'r')
+inFile = open("zTopCross.txt",'r')
 process = inFile.readline()
 xaxis   = inFile.readline()
 title   = inFile.readline()
 inFile.close()
 
-sqrtSAsym, Asymmetry = np.loadtxt('Zp_Asymmetry.txt',unpack=True,skiprows=3)
-sqrtSCross, crosSection = np.loadtxt('Zp_cross.txt',unpack=True,skiprows=3)
+sqrtSAsym, Asymmetry = np.loadtxt('zTopAsym.txt',unpack=True,skiprows=3)
+sqrtSCross, crosSection = np.loadtxt('zTopCross.txt',unpack=True,skiprows=3)
 #ZMAsym  = [[91,91],[np.min(Asymmetry),np.max(Asymmetry)]]
 #ZMCross = [[91,91],[np.min(crosSection),np.max(crosSection)]]
 #ZpMAsym  = [[1000,1000],[np.min(Asymmetry),np.max(Asymmetry)]]
@@ -22,7 +22,7 @@ ax.plot(sqrtSAsym, Asymmetry)
 #ax.legend(loc='best')
 ax.set_xlabel(r'$\sqrt{s}$ [GeV]')
 ax.set_ylabel('Asymmetry')
-plt.savefig('ZpAsym.pdf')
+plt.savefig('ZAsym.pdf')
 #ax[0].text(x=91,y=0.6,s="Z")
 #ax[0].text(x=1000,y=0.6,s="Z'")
 
@@ -34,7 +34,7 @@ ax.set_yscale('log')
 #ax.plot(ZMCross[0],ZMCross[1],label="Z mass")
 #ax.plot(ZpMCross[0],ZpMCross[1],label="Z' mass")
 #ax.legend(loc='best')
-plt.savefig('ZpCross.pdf')
+plt.savefig('ZCross.pdf')
 #ax[1].text(x=1000,y=1770,s="Z'")
 #ax[1].text(x=91,y=700,s="Z")
 
